@@ -8,7 +8,7 @@ class Resource(ABC):
     def get_name(self):
         return self.__class__.__name__
 
-    def lookup(self, keyword: str) -> List[Suggestion]:
+    def lookup(self, keyword: str, numResults: int) -> List[Suggestion]:
         print(f"looking up keyword: {self.get_name()}:{keyword}")
 
         return [Suggestion("www.dummyurl.com", "Dummy description", "dummy author")]
