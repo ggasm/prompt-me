@@ -10,7 +10,6 @@ class KeyphraseReader:
             data = json.load(json_data)
         self.contexts = data[ctx_id]
 
-
     def get_keyphrase_sets(self, n):
         if self.kp_sets == []:
             valid_pos = {'NOUN', 'PROPN', 'ADJ'}
@@ -27,7 +26,6 @@ class KeyphraseReader:
             return self.kp_sets
         else:
             return self.kp_sets
-
 
     def get_keyphrase_set(self, n, i):
         if self.kp_sets == []:
