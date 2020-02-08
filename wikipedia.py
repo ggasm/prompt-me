@@ -5,5 +5,5 @@ from resource import Resource
 
 class Wikipedia(Resource):
     def lookup(self, keyword: str) -> List[Suggestion]:
-        super().lookup(keyword)
-        pass
+        return super().lookup(keyword)
+

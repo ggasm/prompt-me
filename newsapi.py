@@ -5,6 +5,4 @@ from resource import Resource
 
 class NewsApi(Resource):
     def lookup(self, keyword: str) -> List[Suggestion]:
-        super().lookup(keyword)
-        print("from class")
-        pass
+        return super().lookup(keyword)

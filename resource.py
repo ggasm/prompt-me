@@ -5,7 +5,10 @@ from suggestion import Suggestion
 
 
 class Resource(ABC):
-    def lookup(self, keyword: str) -> List[Suggestion]:
-        print(f"looking up keyword: {type(self)}:{keyword}")
-        pass
+    def get_name(self):
+        return self.__class__.__name__
 
+    def lookup(self, keyword: str) -> List[Suggestion]:
+        print(f"looking up keyword: {self.get_name()}:{keyword}")
+
+        return [Suggestion("www.dummyurl.com", "Dummy description", "dummy author")]

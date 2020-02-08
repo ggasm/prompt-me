@@ -18,10 +18,16 @@ def homepage():
     return f"You have reached the homepage of {APP_NAME}"
 
 
+example_keyword = "MyKeywordExample"
+
+
+@app.route("/dummy_test")
 def test_resources():
-
-    for resource in resources:
-        resource.lookup("MyKeywordExample")
+    return keyword_anlaysis(example_keyword)
 
 
-test_resources()
+def keyword_anlaysis(keyword):
+    return {resource.get_name(): resource.lookup(example_keyword) for resource in resources}
+
+
+print(keyword_anlaysis(example_keyword))
