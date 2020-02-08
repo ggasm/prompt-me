@@ -20,11 +20,10 @@ class NewsApi(Resource):
         }
 
         response = requests.get('https://newsapi.org/v2/everything', parameters)
-
-        response_dict = json.loads(response);
+        response_dict = response.json()
 
         suggestions = []
-
         for i in response_dict['articles']:
-            suggestions.append([i['url'], i['description'], i['author']])
+            suggestions.append(Suggestion(i['url'], i['description'], i['author']))
 
+        return suggestions
