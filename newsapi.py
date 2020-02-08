@@ -9,7 +9,6 @@ import requests
 class NewsApi(Resource):
 
     def lookup(self, keyword: str) -> List[Suggestion]:
-        pass
         api_key = "750565b602914552ac29ea23d3e4e4f5"
 
         parameters = {
@@ -28,3 +27,4 @@ class NewsApi(Resource):
 
         for i in response_dict['articles']:
             suggestions.append([i['url'], i['description'], i['author']])
+
