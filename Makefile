@@ -2,7 +2,7 @@ SHELL = /bin/bash
 
 setup:
 	python3 -m venv python-venv
-	pip install -r requirements.txt
+	pip3 install -r requirements.txt
 
 run:
 	source python-venv/bin/activate
