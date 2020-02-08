@@ -20,7 +20,3 @@ class KeyphraseReader:
         for kp_tup in kp_tups:
             kp_set.append(kp_tup[0])
         return kp_set
-
-if __name__ == "__main__":
-    reader = KeyphraseReader('contexts.json','contexts')
-    print(reader.get_keyphrase_set(0, 3))
