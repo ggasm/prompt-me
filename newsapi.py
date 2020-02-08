@@ -1,3 +1,5 @@
+from dataclasses import dataclass
+
 from suggestion import Suggestion
 from typing import List
 from resource import Resource
