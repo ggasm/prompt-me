@@ -1,6 +1,13 @@
 SHELL = /bin/bash
 
+setup:
+	python3 -m venv python-venv
+	pip install -r requirements.txt
+
 run:
 	source python-venv/bin/activate
-	export FLASK_ENV=development
-	python run.py
+	export FLASK_ENV=development && python3 run.py
+	
+
+clean:
+	rm -rf python-venv
