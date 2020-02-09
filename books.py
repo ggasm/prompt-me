@@ -28,16 +28,19 @@ class BooksApi(Resource):
             authors = response['volumeInfo']['authors']
 
             for author in authors:
-                authors_suggestion = authors_suggestion + authors if (
-                            authors_suggestion == '') else authors_suggestion + ', ' + author
+
+                if authors_suggestion == '':
+                    authors_suggestion += + authors
+                else:
+                    authors_suggestion += ', ' + author
 
             if authors_suggestion == "":
                 authors_suggestion = 'no authors found'
 
-            suggestions.append(Suggestion((response['volumeInfo']).get("previewLink", 0),
-                                          (response['volumeInfo']).get("title", 0) + ': ' + (
+            suggestions.append(Suggestion((response['volumeInfo']).get("previewLink", ""),
+                                          (response['volumeInfo']).get("title", "") + ': ' + (
                                               response['volumeInfo']).get(
-                                              "title", 0),
+                                              "title", ""),
                                           authors_suggestion))
             i += 1
         return suggestions
