@@ -8,10 +8,11 @@ from newsapi import NewsApi
 from resource import Resource
 from suggestion import Suggestion
 from wikipedia import Wikipedia
+from books import BooksApi
 from typing import List
 
 
-resources = [Wikipedia(), NewsApi()]
+resources = [NewsApi(), Wikipedia(), BooksApi()]
 
 APP_NAME = "prompt-me"
 MAX_NUM_KEYWORDS = 10
@@ -60,5 +61,5 @@ def keyword_analysis(keyword: str) -> {Resource: List[Suggestion]}:
     return {str(resource): resource.lookup(example_keyword) for resource in resources}
 
 
-print(NewsApi().lookup("Trump"))
+print(BooksApi().lookup("Trump"))
 # print(keyword_analysis(example_keyword))
