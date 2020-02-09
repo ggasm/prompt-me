@@ -1,9 +1,5 @@
-<<<<<<< HEAD
-=======
-import json
-import os
 
->>>>>>> f0e3f09d0fa749d86fdebc3f0f9a9db8496fe2af
+import os
 from suggestion import Suggestion
 from typing import List
 from resource import Resource
@@ -21,8 +17,10 @@ class NewsApi(Resource):
             'language': 'en',
             'sortBy': 'popularity',
         }
+        print(api_key)
         response = requests.get('https://newsapi.org/v2/everything', parameters)
         response_dict = response.json()
+        print(response_dict)
         suggestions = []
         i = 0
         for article in response_dict['articles']:
