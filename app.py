@@ -1,8 +1,8 @@
-import random
-
 from flask import Flask, jsonify
 from flask_socketio import SocketIO
 
+
+import random
 from extract import KeywordExtractor
 from newsapi import NewsApi
 from resource import Resource
@@ -10,9 +10,6 @@ from suggestion import Suggestion
 from wikipedia import Wikipedia
 from typing import List
 
-import eventlet
-
-eventlet.monkey_patch()
 
 resources = [Wikipedia(), NewsApi()]
 
@@ -57,9 +54,11 @@ def text_analysis(paragraphs: List[str]) -> {str: List[Suggestion]}:
 def analyse(paragraphs):
     print(paragraphs)
 
+
 # TESTING ONLY
 def keyword_analysis(keyword: str) -> {Resource: List[Suggestion]}:
-    return {resource: resource.lookup(example_keyword) for resource in resources}
+    return {str(resource): resource.lookup(example_keyword) for resource in resources}
 
 
-print(keyword_analysis(example_keyword))
+print(NewsApi().lookup("Trump"))
+# print(keyword_analysis(example_keyword))

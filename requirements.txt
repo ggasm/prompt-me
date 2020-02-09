@@ -1,3 +1,4 @@
+gevent
 astroid==2.3.3
 blis==0.4.1
 catalogue==1.0.0
@@ -7,7 +8,6 @@ Click==7.0
 cymem==2.0.3
 decorator==4.4.1
 dnspython==1.16.0
-eventlet==0.25.1
 Flask==1.1.1
 Flask-SocketIO==4.2.1
 future==0.18.2
