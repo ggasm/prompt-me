@@ -13,7 +13,7 @@ class Resource:
     def __repr__(self):
         return str(self)
 
-    def lookup(self, keyword: str) -> List[Suggestion]:
-        print(f"looking up keyword: {self}:{keyword}")
+    def lookup(self, keyword: str, numResults: int) -> List[Suggestion]:
+        print(f"looking up keyword: {self.get_name()}:{keyword}")
 
         return [Suggestion("www.dummyurl.com", "Dummy description", "dummy author")]
