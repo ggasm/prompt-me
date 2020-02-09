@@ -3,8 +3,9 @@ from flask_socketio import SocketIO
 
 from newsapi import NewsApi
 from wikipedia import Wikipedia
+from books import BooksApi
 
-resources = [Wikipedia(), NewsApi()]
+resources = [Wikipedia(), NewsApi(), BooksApi()]
 
 APP_NAME = "prompt-me"
 
