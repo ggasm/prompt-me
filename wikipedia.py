@@ -7,10 +7,11 @@ from resource import Resource
 
 class Wikipedia(Resource):
     URL = 'https://en.wikipedia.org/w/api.php'
-    parameters = { 'action': 'opensearch', 'format': 'json', 'limit' : str(limit) }
+    parameters = { 'action': 'opensearch', 'format': 'json' }
 
     def lookup(self, keyword: str, maxResults: int = 3) -> List[Suggestion]:
         self.parameters['search'] = keyword
+        self.parameters['limit'] = maxResults
         search = requests.Session()
         response = search.get(url=self.URL, params=self.parameters)
         results = response.json()
